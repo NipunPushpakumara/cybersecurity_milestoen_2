@@ -14,7 +14,6 @@ my_venv\Scripts\Activate.ps1
 uvicorn main:app --reload --port 3300
 
 
-
 #instructions on URL 
 
 curl -X POST "https://cybersecurity-milestoen-2.onrender.com/generate-key" -H "Content-Type: application/json" -d "{\"key_type\":\"AES\", \"key_size\":256}"
