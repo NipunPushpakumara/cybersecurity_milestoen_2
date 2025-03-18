@@ -6,7 +6,7 @@ python -m venv my_venv
 
 #activating the venv
 [in the folder having environfolder]
-env\Scripts\Activate.ps1
+my_venv\Scripts\Activate.ps1
 
 
 
