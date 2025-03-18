@@ -8,7 +8,7 @@ This repository contains an API that demonstrates basic encryption, decryption, 
 
 This endpoint generates an AES key of the specified size (in this case, 256 bits).
 
-**URL**: `/generate-key`
+**URL**: `https://cybersecurity-milestoen-2.onrender.com/generate-key`
 
 **Method**: `POST`
 
@@ -21,7 +21,7 @@ curl -X POST "https://cybersecurity-milestoen-2.onrender.com/generate-key" -H "C
 
 This endpoint generates an AES key of the specified size (in this case, 256 bits).
 
-**URL**: `/encrypt`
+**URL**: `https://cybersecurity-milestoen-2.onrender.com/encrypt`
 
 **Method**: `POST`
 
@@ -35,7 +35,7 @@ curl -X POST "https://cybersecurity-milestoen-2.onrender.com/encrypt" -H "Conten
 
 This endpoint generates an AES key of the specified size (in this case, 256 bits).
 
-**URL**: `/decrypt`
+**URL**: `https://cybersecurity-milestoen-2.onrender.com/decrypt`
 
 **Method**: `POST`
 
@@ -49,7 +49,7 @@ curl -X POST "https://cybersecurity-milestoen-2.onrender.com/decrypt" -H "Conten
 
 This endpoint generates an AES key of the specified size (in this case, 256 bits).
 
-**URL**: `/generate-hash`
+**URL**: `https://cybersecurity-milestoen-2.onrender.com/generate-hash`
 
 **Method**: `POST`
 
@@ -63,7 +63,7 @@ curl -X POST "https://cybersecurity-milestoen-2.onrender.com/generate-hash" -H "
 
 This endpoint generates an AES key of the specified size (in this case, 256 bits).
 
-**URL**: `/verify-hash`
+**URL**: `https://cybersecurity-milestoen-2.onrender.com/verify-hash`
 
 **Method**: `POST`
 
