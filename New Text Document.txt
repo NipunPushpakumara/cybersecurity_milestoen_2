@@ -1,0 +1,13 @@
+#creating venv
+python -m venv my_venv
+
+
+#activating the venv
+[in the folder having environfolder]
+env\Scripts\Activate.ps1
+
+
+
+#deploy in localhost
+uvicorn main:app --reload --port 3300
+
