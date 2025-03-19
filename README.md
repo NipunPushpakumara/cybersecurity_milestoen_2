@@ -1,6 +1,6 @@
 # Cybersecurity Milestone 2
 
-This repository contains an API that demonstrates basic encryption, decryption, and hashing functionality for educational purposes. It supports AES encryption, decryption, and SHA-256 hashing.
+This repository contains an API that demonstrates basic key generation, encryption, decryption, and hashing functionality for educational purposes. It supports AES encryption, decryption, and SHA-256 hashing.
 
 ## API Endpoints
 
