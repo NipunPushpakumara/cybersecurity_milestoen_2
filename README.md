@@ -1,6 +1,10 @@
 # Cybersecurity Milestone 2
 
 This repository contains an API that demonstrates basic key generation, encryption, decryption, and hashing functionality for educational purposes. It supports AES encryption, decryption, and SHA-256 hashing.
+  #The instance is created in Render free Hobby plan that does not have an expiration date
+  #Instance sleeps after 15 minutes of inactivity (cold starts can slow things down).
+  #service stops running, freeing up server resources.
+  #When a new request comes in, Render restarts the instance (cold start) which may take (a few seconds to even a minute)
 
 ## API Endpoints
 
