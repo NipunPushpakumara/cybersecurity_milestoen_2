@@ -1,6 +1,6 @@
 # Cybersecurity Milestone 2
 
-# 🔐 Encryption & Hashing API  
+# 🔐 Encryption/Decryption , Key Generation & Hashing API  
 
 This repository contains an API demonstrating **basic key generation, encryption, decryption, and hashing functionality** for educational purposes. It supports:  
 
