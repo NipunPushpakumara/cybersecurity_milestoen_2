@@ -1,6 +1,12 @@
 # Cybersecurity Milestone 2
 
-This repository contains an API that demonstrates basic key generation, encryption, decryption, and hashing functionality for educational purposes. It supports AES encryption, decryption, and SHA-256 hashing.
+# 🔐 Encryption & Hashing API  
+
+This repository contains an API demonstrating **basic key generation, encryption, decryption, and hashing functionality** for educational purposes. It supports:  
+
+- **AES Key Gernation, Encryption & Decryption (key sizes : 128, 192, 256)**  
+- **SHA-256,SHA-512 Hashing**  
+
 ## 🚀 Deployment on Render  
 
 This API is deployed on **Render's free Hobby plan**, which comes with the following behavior:  
@@ -11,6 +17,7 @@ This API is deployed on **Render's free Hobby plan**, which comes with the follo
 - ⏳ **Cold starts can take a few seconds to a minute.**  
 
 For continuous availability, consider upgrading to a paid plan or using a pinging service like **UptimeRobot**.  
+
 ## API Endpoints
 
 ### 1. **Generate Key**
