@@ -27,6 +27,8 @@ This endpoint generates an AES key of the specified size (in this case, 256 bits
 
 **Method**: `POST`
 
+**Body Structure**: ` { "key_type": "AES", "key_size": 256 }`
+
 **Request Example**:
 ```bash
 curl -X POST "https://cybersecurity-milestoen-2.onrender.com/generate-key" -H "Content-Type: application/json" -d "{\"key_type\":\"AES\", \"key_size\":256}"
@@ -39,6 +41,9 @@ This endpoint generates an AES key of the specified size (in this case, 256 bits
 **URL**: `https://cybersecurity-milestoen-2.onrender.com/docs#/encrypt`
 
 **Method**: `POST`
+
+**Body Structure**: ` { "key_id": "12345", "plaintext": "message-to-encrypt", "algorithm": "AES" }
+`
 
 **Request Example**:
 ```bash
@@ -54,6 +59,9 @@ This endpoint generates an AES key of the specified size (in this case, 256 bits
 
 **Method**: `POST`
 
+ **Body Structure**:`{ "key_id": "12345", "ciphertext": "base64-encoded-ciphertext", "algorithm": "AES" }`
+
+
 **Request Example**:
 ```bash
 
@@ -68,6 +76,9 @@ This endpoint generates an AES key of the specified size (in this case, 256 bits
 
 **Method**: `POST`
 
+**Body Structure**: ` { "data": "message-to-hash", "algorithm": "SHA-256" }
+`
+
 **Request Example**:
 ```bash
 
@@ -81,6 +92,8 @@ This endpoint generates an AES key of the specified size (in this case, 256 bits
 **URL**: `https://cybersecurity-milestoen-2.onrender.com/docs#/verify-hash`
 
 **Method**: `POST`
+
+**Body Structure**: `{ "data": "message-to-verify", "hash_value": "base64-encoded-hash", "algorithm": "SHA-256" }`
 
 **Request Example**:
 ```bash
