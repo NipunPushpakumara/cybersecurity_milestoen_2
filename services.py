@@ -5,6 +5,8 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
 from fastapi import HTTPException
+from cryptography.exceptions import InvalidSignature
+import binascii
 
 # Dictionary to store keys
 keys = {}
@@ -38,6 +40,8 @@ def encrypt(key_id: str, plaintext: str, algorithm: str):
     return base64.b64encode(iv + ciphertext).decode()
 
 
+from cryptography.exceptions import InvalidSignature
+
 def decrypt(key_id: str, ciphertext: str, algorithm: str):
     key = keys.get(key_id)
     if not key:
@@ -45,18 +49,22 @@ def decrypt(key_id: str, ciphertext: str, algorithm: str):
     if algorithm.upper() != "AES":
         raise HTTPException(status_code=400, detail="Unsupported algorithm")
 
-    decoded_data = base64.b64decode(ciphertext)
-    iv, ciphertext = decoded_data[:16], decoded_data[16:]
+    try:
+        decoded_data = base64.b64decode(ciphertext)
+        iv, ciphertext = decoded_data[:16], decoded_data[16:]
 
-    cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
-    decryptor = cipher.decryptor()
-    padded_plaintext = decryptor.update(ciphertext) + decryptor.finalize()
+        cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
+        decryptor = cipher.decryptor()
+        padded_plaintext = decryptor.update(ciphertext) + decryptor.finalize()
 
-    # Proper PKCS7 Unpadding
-    unpadder = padding.PKCS7(128).unpadder()
-    plaintext = unpadder.update(padded_plaintext) + unpadder.finalize()
-    
-    return plaintext.decode()
+        # Proper PKCS7 Unpadding
+        unpadder = padding.PKCS7(128).unpadder()
+        plaintext = unpadder.update(padded_plaintext) + unpadder.finalize()
+
+        return plaintext.decode()
+
+    except (ValueError, binascii.Error, InvalidSignature):
+        raise HTTPException(status_code=400, detail="Decryption failed: Invalid ciphertext or padding error.")
 
 
 def generate_hash(data: str, algorithm: str):
