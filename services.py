@@ -6,9 +6,6 @@ from Crypto.Util.Padding import pad, unpad
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 from fastapi import HTTPException, status
-from Crypto.PublicKey import RSA
-
-
 
 def encrypt_aes(key: bytes, plaintext: str) -> str:
     iv = os.urandom(16)
@@ -42,4 +39,10 @@ def decrypt_rsa(private_key: bytes, ciphertext: str) -> str:
 def generate_hash(data: str, algorithm: str) -> str:
     if algorithm not in ["SHA-256", "SHA-512"]:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Unsupported algorithm")
-    hash_func = hashlib.sha
+    hash_func = hashlib.sha256 if algorithm == "SHA-256" else hashlib.sha512
+    digest = hash_func(data.encode()).digest()
+    return base64.b64encode(digest).decode()
+
+def verify_hash(data: str, hash_value: str, algorithm: str) -> bool:
+    generated_hash = generate_hash(data, algorithm)
+    return generated_hash == hash_value
