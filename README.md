@@ -104,3 +104,58 @@ curl -X POST "https://cybersecurity-milestoen-2.onrender.com/verify-hash" -H "Co
 
 
 
+
+## API Endpoints Example for RSA
+
+
+### 1. **Generate Key**
+
+This endpoint generates an RSA key of the specified size (in this case, 2048 bits).
+
+**URL**: `https://cybersecurity-milestoen-2.onrender.com/docs#/generate-key`
+
+**Method**: `POST`
+
+**Body Structure**: ` { "key_type": "RSA", "key_size": 2048 }`
+
+**Request Example**:
+```bash
+curl -X POST "https://cybersecurity-milestoen-2.onrender.com/generate-key" -H "Content-Type: application/json" -d "{\"key_type\":\"RSA\", \"key_size\":2048}"
+```
+
+### 2. **Encrypt**
+
+This endpoint generates an RSA key of the specified size (in this case, 2048 bits).
+
+**URL**: `https://cybersecurity-milestoen-2.onrender.com/docs#/encrypt`
+
+**Method**: `POST`
+
+**Body Structure**: ` { "key_id": "12345", "plaintext": "message-to-encrypt", "algorithm": "RSA" }
+`
+
+**Request Example**:
+```bash
+
+curl -X POST "https://cybersecurity-milestoen-2.onrender.com/encrypt" -H "Content-Type: application/json" -d "{ \"key_id\": \12345\", \"plaintext\": \"message-to-encrypt\", \"algorithm\": \"RSA\" }"
+```
+
+### 3. **Decrypt**
+
+This endpoint generates an RSA key of the specified size (in this case, 2048 bits).
+
+**URL**: `https://cybersecurity-milestoen-2.onrender.com/docs#/decrypt`
+
+**Method**: `POST`
+
+ **Body Structure**:`{ "key_id": "12345", "ciphertext": "base64-encoded-ciphertext", "algorithm": "RSA" }`
+
+
+**Request Example**:
+```bash
+
+curl -X POST "https://cybersecurity-milestoen-2.onrender.com/decrypt" -H "Content-Type: application/json" -d "{\"key_id\": \"12345\", \"ciphertext\": \"base64-encoded-ciphertext\", \"algorithm\": \"RSA\"}"
+```
+
+
+
