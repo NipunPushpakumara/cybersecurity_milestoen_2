@@ -4,7 +4,7 @@
 
 This repository contains an API demonstrating **basic key generation, encryption, decryption, and hashing functionality** for educational purposes. It supports:  
 
-- **AES Key Gernation, Encryption & Decryption (key sizes : 128, 192, 256)**  
+- **AES (key sizes : 128, 192, 256) & RSA (key sizes : 2048,4096) Key Gernation, Encryption & Decryption**  
 - **SHA-256, SHA-512 Hashing**  
 
 ## 🚀 Deployment on Render  
@@ -17,7 +17,8 @@ This API is deployed on **Render's free Hobby plan**, which comes with the follo
 - ⏳ **Cold starts can take a few seconds to a minute.**  
 
 
-## API Endpoints
+## API Endpoints Example for AES
+
 
 ### 1. **Generate Key**
 
